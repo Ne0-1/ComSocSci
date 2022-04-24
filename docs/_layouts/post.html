@@ -1,0 +1,28 @@
+{% if page.htmlwidgets %}
+{% for html_dep in site.static_files %}
+  {% if html_dep.path contains 'htmlwidgets_deps/' %}
+    {% assign start = "<script src=" | append: {{site.baseurl}} %}
+    {{html_dep.path | prepend: start | append: "></script>" }}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% all_BoxOffice.html %}
+{% BoxOffice_dow.html %}
+{% include dailyNumQuotes_boxOffice.html %}
+{% include dailySent_boxOffice.html %}
+{% include star_wars_quotes_box.html %}
+{% include totalBoxOffice.html %}
+{% include totalSentiment.html %}
+{% include yearly_BoxOffice.html %}
+{% include yearly_BoxOfficeByMovie.html %}
+{% include yearly_movies.html %}
+{% include yearly_Quotes.html %}
+{% include tot_box_quotes %}
+{% include tot_box_sentiment %}
+{% include rq4_countries.html %}
+{% include gender_pieChart.html %}
+{% include scores.html %}
+{% include gender_Sentiment.html %}
+{% include gender_rating.html %}
+{% include rq4_agegroups.html %}
